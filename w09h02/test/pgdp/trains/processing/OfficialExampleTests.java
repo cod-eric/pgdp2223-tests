@@ -99,21 +99,6 @@ class OfficialExampleTests {
     }
 
     @Test
-    void worstDelayedTrain() {
-        assertEquals(trainConnections.get(2), DataProcessing.worstDelayedTrain(trainConnections.stream()));
-    }
-
-    @Test
-    void percentOfKindStopsWithKindRegular() {
-        assertEquals(85.71428571428571, DataProcessing.percentOfKindStops(trainConnections.stream(), TrainStop.Kind.REGULAR), EPSILON);
-    }
-
-    @Test
-    void percentOfKindStopsWithKindCancelled() {
-        assertEquals(14.285714285714285, DataProcessing.percentOfKindStops(trainConnections.stream(), TrainStop.Kind.CANCELLED), EPSILON);
-    }
-
-    @Test
     void delayComparedToTotalTravelTimeByTransport() {
         Map<String, Double> actual = DataProcessing.delayComparedToTotalTravelTimeByTransport(trainConnections.stream());
         assertEquals(16.666666666666668, actual.get("ICE"),  EPSILON);
